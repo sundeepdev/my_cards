@@ -8,10 +8,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import NVActivityIndicatorView
 
 class HomeLandingViewController: UIViewController, BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     var selectedCard: Card?
 
     var homeLandingVM: HomeLandingVM = HomeLandingVM(fetchCardsUseCase:
@@ -39,8 +41,9 @@ class HomeLandingViewController: UIViewController, BaseViewController, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         self.setTitle(title: "Home")
-        self.bind(to: homeLandingVM)
+        startAnimation()
         homeLandingVM.viewDidLoad()
+        self.bind(to: homeLandingVM)
     }
 
     private func setupUI() {
@@ -48,16 +51,30 @@ class HomeLandingViewController: UIViewController, BaseViewController, UITableVi
     }
 
     private func bind(to viewModel: HomeLandingVM) {
-        _ = viewModel.cards.subscribe(onNext: { _ in
-            self.updateItems()
-        }, onError: { error in
+        _ = viewModel.cards.subscribe(onNext: {[weak self] _ in
+            self?.updateItems()
+            if !viewModel.cards.value.isEmpty {
+                self?.stopAnimation()
+            }
+        }, onError: { [weak self]error in
+            self?.stopAnimation()
             print(error)
-            self.updateItems()
+            self?.updateItems()
         })
     }
 
     private func updateItems() {
         tableView.reloadData()
+    }
+
+    private func startAnimation() {
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.isHidden = false
+    }
+
+    private func stopAnimation() {
+        activityIndicatorView.stopAnimating()
+        activityIndicatorView.isHidden = true
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
