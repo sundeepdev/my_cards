@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1320"
+   LastUpgradeVersion = "1220"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9289A18627E506C6006B6D1B"
+               BlueprintIdentifier = "925D4F5F27F1BAB8009E1AA5"
                BuildableName = "cards.app"
                BlueprintName = "cards"
                ReferencedContainer = "container:cards.xcodeproj">
@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9289A19C27E506D4006B6D1B"
+               BlueprintIdentifier = "925D4F7527F1BABA009E1AA5"
                BuildableName = "cardsTests.xctest"
                BlueprintName = "cardsTests"
                ReferencedContainer = "container:cards.xcodeproj">
@@ -43,7 +43,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9289A1A627E506D4006B6D1B"
+               BlueprintIdentifier = "925D4F8027F1BABA009E1AA5"
                BuildableName = "cardsUITests.xctest"
                BlueprintName = "cardsUITests"
                ReferencedContainer = "container:cards.xcodeproj">
@@ -65,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9289A18627E506C6006B6D1B"
+            BlueprintIdentifier = "925D4F5F27F1BAB8009E1AA5"
             BuildableName = "cards.app"
             BlueprintName = "cards"
             ReferencedContainer = "container:cards.xcodeproj">
@@ -82,7 +82,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9289A18627E506C6006B6D1B"
+            BlueprintIdentifier = "925D4F5F27F1BAB8009E1AA5"
             BuildableName = "cards.app"
             BlueprintName = "cards"
             ReferencedContainer = "container:cards.xcodeproj">
